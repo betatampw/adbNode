@@ -41,7 +41,8 @@ html
 						li: a(href='/keystone/signout') Sign Out
 					else
 						li: a(href='/keystone/signin') Sign In
-		
+					if user && user.canAccessKeystone	
+						li: a(href='/keystone') Admin
 		//- body
 		.wrapper-inner
 			//- intro

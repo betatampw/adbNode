@@ -1,0 +1,29 @@
+var keystone = require('keystone'),
+  Types = keystone.Field.Types;
+
+var AnimeTag = new keystone.List('AnimeTag', {
+  autokey: {
+    from: 'name',
+    path: 'key'
+  }
+});
+
+AnimeTag.add({
+  name: {
+    type: String,
+    required: true
+  },
+  desc: {
+    type: Types.Html,
+    wysiwyg: true,
+    height: 150
+  },
+});
+
+AnimeTag.relationship({
+  ref: 'Anime',
+  path: 'tag'
+});
+
+AnimeTag.addPattern('standard meta');
+AnimeTag.register();

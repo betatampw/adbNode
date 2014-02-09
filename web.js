@@ -16,7 +16,7 @@ keystone.init({
   'static': 'public',
 
   'views': 'templates/views',
-  'view engine': 'jade', // TODO
+  'view engine': 'jade',
 
   'auto update': false,
   'mongo': process.env.MONGO_URI,
@@ -45,8 +45,8 @@ keystone.set('locals', {
 keystone.set('routes', require('./routes'));
 
 keystone.set('nav', {
+  'anime': ['animes', 'anime-categories', 'anime-tags'],
   'posts': ['posts', 'post-comments', 'post-categories'],
-  'galleries': 'galleries',
   'enquiries': 'enquiries',
   'users': 'users',
   'field-tests': 'things'
